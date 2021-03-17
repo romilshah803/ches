@@ -1,9 +1,9 @@
 // Sotilas
-function Pawn(square,col) {
+function Pawn(square,col,color) {
  this.x = square.x+25;
   this.y = square.y+25;
   this.col = col;
-  
+  this.color=color;
   this.show = function() {
    push();
     if(this.col==1) {
@@ -14,7 +14,7 @@ function Pawn(square,col) {
       fill(255);
     }
     imageMode(CENTER);
-    if(color=="white"){
+    if(this.color=="white"){
       image(wpawn,this.x,this.y,30,30);
     }else{
       image(bpawn,this.x,this.y,30,30);
@@ -22,14 +22,21 @@ function Pawn(square,col) {
     //ellipse(this.x,this.y,30);
     pop();
   }
+  this.move=function(){
+    if(this.color=="white"){
+      this.y=square.y+25;
+    }else{
+      this.y=square.y-25
+    }
+  }
 }
 
 // Torni
-function Rook(square,col) {
+function Rook(square,col,color) {
  this.x = square.x+25;
   this.y = square.y+25;
   this.col = col;
-  
+  this.color = color;
   this.show = function() {
    push();
     if(this.col==1) {
@@ -41,7 +48,7 @@ function Rook(square,col) {
     }
     imageMode(CENTER);
 
-    if(color=="white"){
+    if(this.color=="white"){
       image(wrook,this.x,this.y,30,30);
     }else{
       image(brook,this.x,this.y,30,30);
@@ -52,11 +59,11 @@ function Rook(square,col) {
 }
 
 // Ratsu
-function Knight(square,col) {
+function Knight(square,col,color) {
  this.x = square.x+25;
   this.y = square.y+25;
   this.col = col;
-  
+  this.color = color;
   this.show = function() {
    push();
     if(this.col==1) {
@@ -68,7 +75,7 @@ function Knight(square,col) {
     }
     imageMode(CENTER);
 
-    if(color=="white"){
+    if(this.color=="white"){
       image(wknight,this.x,this.y,30,30);
     }else{
       image(bknight,this.x,this.y,30,30);
@@ -79,11 +86,11 @@ function Knight(square,col) {
 }
 
 // Lähetti
-function Bishop(square,col) {
+function Bishop(square,col,color) {
  this.x = square.x+25;
   this.y = square.y+25;
   this.col = col;
-  
+  this.color = color;
   this.show = function() {
    push();
     if(this.col==1) {
@@ -95,7 +102,7 @@ function Bishop(square,col) {
     }
     imageMode(CENTER);
 
-    if(color=="white"){
+    if(this.color=="white"){
       image(wbishop,this.x,this.y,30,30);
     }else{
       image(bbishop,this.x,this.y,30,30);
@@ -106,11 +113,11 @@ function Bishop(square,col) {
 }
 
 // Kuningatar
-function Queen(square,col) {
+function Queen(square,col,color) {
  this.x = square.x+25;
   this.y = square.y+25;
   this.col = col;
-  
+  this.color = color;
   this.show = function() {
    push();
     if(this.col==1) {
@@ -122,7 +129,7 @@ function Queen(square,col) {
     }
     imageMode(CENTER);
 
-    if(color=="white"){
+    if(this.color=="white"){
       image(wqueen,this.x,this.y,30,30);
     }else{
       image(bqueen,this.x,this.y,30,30);

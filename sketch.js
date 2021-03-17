@@ -25,6 +25,7 @@ function setup() {
   for (y = 0; y < height; y += 50) {
     for (x = 0; x < width; x += 50) {
       square = new Square(x, y);
+      square.occupied=true;
       squares.push(square);
     }
   }
@@ -94,5 +95,10 @@ function drawBoard() {
 
       rect(x, y, 50, 50);
     }
+  }
+}
+function keyPressed(){
+  if(keyCode==80){
+    pieces[9].move();
   }
 }
